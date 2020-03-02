@@ -27,4 +27,6 @@ public:
 	GLuint getID();
 private:
 	GLuint shaderID;
+
+	void verificarCompilacion(GLuint id);
 };
