@@ -25,8 +25,15 @@ class Shader
 public:
 	Shader(const char* rutaVertexShader, const char* rutaFragmentShader);
 	GLuint getID();
+	void enlazar();
+	void desenlazar();
+
 private:
 	GLuint shaderID;
-
+	
+	//Funciones
 	void verificarCompilacion(GLuint id);
+	void verificarVinculacion(GLuint id);
+
+
 };
