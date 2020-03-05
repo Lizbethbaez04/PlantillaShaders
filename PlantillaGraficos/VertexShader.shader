@@ -14,7 +14,7 @@ out vec4 fragmentColor;
 //Funcion main
 void main()
 {
-	//Posicion del vertice (vec4)
+	//Posicion del vertice (vec3)
 	gl_Position.xyz = posicion;
 	gl_Position.w = 1.0;
 
