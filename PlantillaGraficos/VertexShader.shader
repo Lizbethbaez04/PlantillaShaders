@@ -5,8 +5,12 @@
 // 2.- Enviar valores al fragment Shader
 
 //Atributos de entrada (son los que vienen desde c++)
-in vec3 posicion;
+in vec4 posicion;
 in vec4 color;
+
+//Uniforms -> son variables de entrada tambien -> matrices
+uniform mat4 transformaciones;
+
 
 //Atributos de salida (son los que van a ir hacia el fragmentShader)
 out vec4 fragmentColor;
@@ -14,9 +18,8 @@ out vec4 fragmentColor;
 //Funcion main
 void main()
 {
-	//Posicion del vertice (vec3)
-	gl_Position.xyz = posicion;
-	gl_Position.w = 1.0;
+	//Posicion del vertice (vec4)
+	gl_Position = transformaciones * posicion;
 
 	//Establecer valores de atributos de salida
 	fragmentColor = color;
